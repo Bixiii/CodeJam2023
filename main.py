@@ -1,27 +1,49 @@
-import time
+import sys
+
+
+def get_input_form_stdin():
+    contents = []
+    while True:
+        try:
+            line = input()
+        except EOFError:
+            break
+        contents.append(line)
+    return contents
+
+
+def get_input_from_file(input_file_name):
+    input_file = open(input_file_name)
+    contents = input_file.readlines()
+    return contents
+
+
+##############################
+# Implementation of Solution #
+##############################
+
 
 if __name__ == '__main__':
 
-    # setup
-    input_files = [
-        'input_data/input.in',
-    ]
+    with_files = True  # locally we can use files, when submitting we need to change it to False
+    input_file_name = "input_data/test_input.txt"
+    output_file_name = input_file_name.replace("input", "output")
 
-    for input_file in input_files:
+    # get input
+    if with_files:
+        input_content = get_input_from_file(input_file_name)
+    else:
+        input_content = get_input_form_stdin()
 
-        # create name for output file
-        output_file_name = 'output_data/' + input_file[input_file.find('/'):input_file.find('.')] + '.txt'  # add timestamp time.strftime('%H%M%S')
+    # create output solution
+    output = ""
+    for i, line in enumerate(input_content):
+        output = output + line
 
-        # read input
-        input_file = open(input_file)
-        lines = input_file.readlines()
-
-        # do something with the input
-        for i, line in enumerate(lines):
-            print(line.strip())
-
-        # # write result to file
+    # write output
+    if with_files:
         output_file = open(output_file_name, 'w')
-        for line in lines:
-            output_file.writelines(line + '\n')
+        output_file.writelines(output)
         output_file.close()
+    else:
+        print(output)
