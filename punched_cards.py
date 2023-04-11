@@ -38,11 +38,11 @@ def create_asci_drawing(rows: int, cols: int):
 
 if __name__ == '__main__':
 
-    with_files = False
+    with_files = True
 
+    input_file_name = "input_data/sample_ts1_input.txt"
+    output_file_name = input_file_name.replace("input", "output")
     if with_files:
-        input_file_name = "input_data/sample_ts1_input.txt"
-        output_file_name = input_file_name.replace("input", "output")
         input_content = get_input_from_file(input_file_name)
     else:
         input_content = get_input_form_stdin()
