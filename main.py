@@ -1,4 +1,5 @@
 import sys
+import itertools
 
 
 def get_input_form_stdin():
@@ -17,11 +18,9 @@ def get_input_from_file(input_file_name):
     contents = input_file.readlines()
     return contents
 
-
 ##############################
 # Implementation of Solution #
 ##############################
-
 
 if __name__ == '__main__':
 
@@ -37,13 +36,16 @@ if __name__ == '__main__':
 
     # create output solution
     output = ""
-    for i, line in enumerate(input_content):
-        output = output + line
+    num_test_cases = int(input_content[0])
+
+    for line in input_content:
+        print(line.strip())
 
     # write output
     if with_files:
         output_file = open(output_file_name, 'w')
         output_file.writelines(output)
         output_file.close()
+        print(output)
     else:
         print(output)
