@@ -1,1 +1,21 @@
-Case #1: Case #1: Case #1: 
+Case #1: POSSIBLE
+['A', 'B']
+Case #2: IMPOSSIBLE
+Case #3: POSSIBLE
+['BD', 'FAAZ']
+Case #4: POSSIBLE
+['BB', 'BDAAA']
+Case #5: POSSIBLE
+['BB', 'BDAAA', 'BDAAAC']
+Case #6: POSSIBLE
+['BB', 'BDAAA', 'BDAAAC', 'BDAAACAAAAC']
+Case #7: POSSIBLE
+['CO', 'DEJ', 'MA']
+Case #8: POSSIBLE
+['CODE', 'JA', 'M']
+Case #9: IMPOSSIBLE
+Case #10: IMPOSSIBLE
+Case #11: IMPOSSIBLE
+Case #12: POSSIBLE
+['A', 'AA']
+Case #13: IMPOSSIBLE
